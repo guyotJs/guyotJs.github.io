@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Word of Weston</title>
+  <link rel="stylesheet" href="./index.css"/>
+  <link rel="stylesheet" href="https://classicmc-studios.github.io/bc.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+</head>
+<body>
+  <i @click="open" class="fa fa-bars bc-m-25 grad"></i>
+  <div class="bc-true-center bc-text-align ">
+    <div class=""> 
+      <h1 class="bc-text-bold grad">
+        The Word of Weston<br/>
+      </h1>
+      <p class="grad">
+        {{version}}
+      </p>
+    </div>
+    <div v-if="view" class="box bc-text-left">
+      <div class="bc-p-25">
+        <span class="card-title">Blog post!</span><br/>
+        <span class="card-description">This would be the description of the post, I'm working on it...</span>
+      </div>
+    </div>
+  </div>
+  <script src="./index.js" type="module"></script>
+</body>
+</html>
