@@ -1,6 +1,9 @@
 body{
   background-color: rgb(20,20,20);
 }
+a{
+  text-decoration: none!important;
+}
 @keyframes background-pan {
   from{
     background-position: 0% center;
@@ -21,7 +24,7 @@ body{
 .box{
   width: 300px;
   height: 120px;
-  background-image:linear-gradient(to bottom right,rgba(0, 100, 0,0.2),rgba(0, 128, 0,0.2),rgba(145, 238, 145,0.2));
+  background-image:radial-gradient(rgb(30,30,30),rgb(20,20,20));
   border: 1px solid rgba(128, 128, 128,0.5);
   margin: 20px;
   border-radius: 10px;
