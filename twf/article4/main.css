@@ -11,7 +11,7 @@ a{color:rgb(0, 123, 255);text-decoration: none;}
 a:hover{text-decoration: underline;}
 r{color:rgb(255, 0, 0);}
 cc{color:rgb(0, 183, 255)}
-top{font-weight: 10;font-size:30px;margin:5%;}
+top{font-weight: 10!important;font-size:30px!important;margin:5%;}
 topSub{margin:5%;}
 articleExtra{
   float: right;
