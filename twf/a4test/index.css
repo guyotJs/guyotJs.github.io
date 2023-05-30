@@ -1,4 +1,4 @@
-.section{border-bottom: 1px solid black;font-weight: 10;font-size:30px;margin-bottom: 1%;margin-top: 1%;}
+.section{border-bottom: 1px solid black;font-weight: 10;margin-bottom: 1%;margin-top: 1%;}
 .src{font-weight: 10;font-size:26px;}
 main{margin-left:10%;margin-right:10%;} 
 main img{width:200px!important;height:263px!important;border-style:solid;border-width: 1px!important;margin-left: 0.5%;}
@@ -20,7 +20,7 @@ h1{
     margin: 0%;
     padding: 0%;
     font-weight: 100;
-    font-size: 30px!important;
+    /* font-size: 30px!important; */
 }
 h2,h3,h1{
   font-weight: 100;
