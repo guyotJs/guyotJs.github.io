@@ -38,7 +38,7 @@ h2,h3,h1{
 .gridEnd{background-color:rgb(238,238,238);padding-left:2px;padding-right:2px;}
 table{background-color:rgb(238,238,238);}
 .box{float:right;width:200px;height:180px;border:1px solid black;background-color:rgb(245, 245, 245);}
-.mobileBox{width:200px;height:180px;border:1px solid black;background-color:rgb(255, 255, 255);}
+.mobileBox{width:200px;height:180px;border:1px solid black;background-color:rgb(255, 255, 255);overflow: hidden;}
 
 /* .mobileBox{display: block;float: left;text-align: center;width: 160px !important;height: 180px !important;margin-right: 10px;border:1px solid black;background-color:rgb(238, 238, 238);} */
 .boxInfo{margin-top:10px;text-align: center;}
