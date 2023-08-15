@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Spinning Red Cube</title>
+  <title>Spinning Red Cube with Lighting and Shadows</title>
   <style>
     body { margin: 0; }
     canvas { display: block; }
@@ -19,18 +19,32 @@
     camera.position.z = 5;
 
     // Set up the renderer
-    const renderer = new THREE.WebGLRenderer();
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.shadowMap.enabled = true; // Enable shadow mapping
     document.body.appendChild(renderer.domElement);
 
     // Create a red cube
     const geometry = new THREE.BoxGeometry(1, 1, 1);
-    const material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+    const material = new THREE.MeshPhongMaterial({ color: 0xff0000 });
     const cube = new THREE.Mesh(geometry, material);
+    cube.castShadow = true; // Enable casting shadows
     scene.add(cube);
 
     // Set up rotation
     const rotationSpeed = 0.005;
+
+    // Create directional light (top left)
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+    directionalLight.position.set(-2, 2, 2);
+    directionalLight.castShadow = true; // Enable casting shadows
+    scene.add(directionalLight);
+
+    // Set up shadows
+    directionalLight.shadow.mapSize.width = 1024;
+    directionalLight.shadow.mapSize.height = 1024;
+    directionalLight.shadow.camera.near = 0.5;
+    directionalLight.shadow.camera.far = 10;
 
     // Render loop
     const animate = () => {
