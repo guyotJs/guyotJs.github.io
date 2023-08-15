@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Spinning 3D Cube with Paper.js</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.15/paper-full.min.js"></script>
+</head>
+<body>
+  <canvas id="myCanvas" resize></canvas>
+  <script>
+    paper.setup('myCanvas');
+    
+    const scene = new paper.Group();
+
+    const vertices = [
+      new paper.Point(-1, -1, -1),
+      new paper.Point(1, -1, -1),
+      new paper.Point(1, 1, -1),
+      new paper.Point(-1, 1, -1),
+      new paper.Point(-1, -1, 1),
+      new paper.Point(1, -1, 1),
+      new paper.Point(1, 1, 1),
+      new paper.Point(-1, 1, 1)
+    ];
+
+    const faces = [
+      [vertices[0], vertices[1], vertices[2], vertices[3]],
+      [vertices[4], vertices[5], vertices[6], vertices[7]],
+      [vertices[0], vertices[1], vertices[5], vertices[4]],
+      [vertices[2], vertices[3], vertices[7], vertices[6]],
+      [vertices[1], vertices[2], vertices[6], vertices[5]],
+      [vertices[4], vertices[7], vertices[3], vertices[0]]
+    ];
+
+    const cube = new paper.Group();
+    for (const face of faces) {
+      const path = new paper.Path();
+      for (const vertex of face) {
+        const point = vertex.project();
+        path.add(point);
+      }
+      path.closePath();
+      cube.addChild(path);
+    }
+    scene.addChild(cube);
+
+    paper.view.center = view.bounds.center;
+    paper.view.zoom = 5;
+
+    function onFrame(event) {
+      const time = event.time;
+
+      cube.rotation.x = Math.sin(time) * 45;
+      cube.rotation.z = Math.cos(time) * 45;
+
+      paper.view.draw();
+    }
+
+    paper.view.onFrame = onFrame;
+  </script>
+</body>
+</html>
