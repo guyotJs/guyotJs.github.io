@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>FactsOnTheGround</title>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="./FamilySearch_20230528_113012.jpg">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+.bg-paper{background-image: url(./Codex_Tchacos_p33.jpg);background-size: cover;background-blend-mode:lighten;background-color:#ffffffdc;}
+@keyframes background-pan {
+  from{
+    background-position: 0% center;
+  }
+  to{
+    background-position: -200% center;
+  }
+}
+.grad{
+  animation: background-pan 3s linear infinite;
+  background-image: linear-gradient(to right, green,darkgreen,green,lightgreen,green);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+  background-size: 200%;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Home</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Articles</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hide-small">About</a>
+    <a href="#"onclick="document.getElementById('contactModal').style.display='block'" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Contact</a>
+    <div class="w3-dropdown-hover w3-hide-small">
+      <!-- <button class="w3-padding-large w3-button" title="More">More <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="#" class="w3-bar-item w3-button">Merchandise</a>
+        <a href="#" class="w3-bar-item w3-button">Extras</a>
+        <a href="#" class="w3-bar-item w3-button">Media</a>
+      </div> -->
+    </div>
+    <!-- <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a> -->
+  </div>
+</div>
+
+<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+  <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Articles</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">About</a>
+  <a href="#" onclick="document.getElementById('contactModal').style.display='block'" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Contact</a>
+</div>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:2000px;margin-top:46px">
+
+  <!-- Automatic Slideshow Images -->
+  <!-- <div class=" w3-display-container w3-center">
+    <img src="" style="width:100%">
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+      <h3>Los Angeles</h3>
+      <p><b>We had the best time playing at Venice Beach!</b></p>   
+    </div>
+  </div> -->
+  
+
+  <!-- The Band Section -->
+  <div class="w3-container bg-paper w3-content w3-center w3-padding-64" style="width:100%;" id="band">
+    <h2 class="w3-wide">The Word of <b class="grad">Weston</b></h2>
+    <p class="w3-opacity"><i>כי כולם צריכים את ישו</i></p>
+    <p class="w3-justify w3-center">A former Mormon turned Presbyterian writing his own little newsletter. My second attempt at this project a link to the original test <a href="https://guyotjs.github.io/twow">here</a>.<br/> <em>Soli deo gloria.</em></p>
+    <div class=" w3-padding-32">
+      <div class="">
+        <p>Weston Snow</p>
+        <img src="./SnowFamilyCrestClearBackground.png" class="w3-round w3-margin-bottom" alt="Random Name" style="width:30%">
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- The Tour Section -->
+  <div class="w3-black" id="tour">
+    <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+      <h2 class="w3-wide w3-center">Recent Articles</h2>
+      <p class="w3-opacity w3-center"><i></i></p><br>
+
+      <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
+        <div class="w3-third w3-margin-bottom">
+          <!-- <img src="/w3images/newyork.jpg" alt="New York" style="width:100%" class="w3-hover-opacity"> -->
+          <div class="w3-container w3-white">
+            <p><b>From Mormon to Chrsitian</b></p>
+            <p class="w3-opacity">Aug 27, 2023</p>
+            <p>My journey from a devout LDS apologist to Reformed Presbyterian, and why I did.</p>
+            <button class="w3-button w3-gray w3-round w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Read</button>
+          </div>
+        </div>
+        <div class="w3-third w3-margin-bottom">
+          <!-- <img src="/w3images/paris.jpg" alt="Paris" style="width:100%" class="w3-hover-opacity"> -->
+          <div class="w3-container w3-white">
+            <p><b>צִיוֹן</b></p>
+            <p class="w3-opacity">Aug 27, 2023</p>
+            <p>Zion, how the idea started, what early american churches used it, and the lds idea of zion.</p>
+            <button class="w3-button w3-gray w3-round w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Read</button>
+          </div>
+        </div>
+        <div class="w3-third w3-margin-bottom">
+          <!-- <img src="/w3images/sanfran.jpg" alt="San Francisco" style="width:100%" class="w3-hover-opacity"> -->
+          <div class="w3-container w3-white">
+            <p><b>The book of Enoch, scripture?</b></p>
+            <p class="w3-opacity">Aug 27, 2023</p>
+            <p>How did early Christianity encorporated the book of Enoch?</p>
+            <button class="w3-button w3-gray w3-round w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Read</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ticket Modal -->
+  <div id="contactModal" class="w3-modal w3-round">
+    <div class="w3-modal-content w3-animate-top w3-card-4">
+      <header class="w3-container w3-light-blue w3-center w3-padding-32"> 
+        <span onclick="document.getElementById('contactModal').style.display='none'" 
+       class="w3-button w3-light-blue w3-xlarge w3-display-topright">×</span>
+        <h2 class="w3-wide"><i class="fa fa-envelope w3-margin-right"></i>Contact</h2>
+      </header>
+      <br/>
+      <div class="w3-container">
+        <form action="/action_page.php" target="_blank">
+            <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+              <div class="w3-half">
+                <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+              </div>
+              <div class="w3-half">
+                <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+              </div>
+            </div>
+            <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+            <button class="w3-button w3-black w3-section w3-right" type="submit">SEND</button>
+          </form>
+        <button class="w3-button w3-red w3-round w3-section" onclick="document.getElementById('contactModal').style.display='none'">Close <i class="fa fa-remove"></i></button>
+      </div>
+    </div>
+  </div>
+  
+<!-- End Page Content -->
+</div>
+
+<!-- Image of location/map -->
+<img src="./topo.jpg" class="w3-image w3-greyscale-min" style="width:100%">
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-32 w3-center w3-opacity w3-light-grey w3-xlarge">
+  <a href="https://github.com/ClassicMC-Studios"><i class="fa fa-github w3-hover-opacity"></i></a>
+  <i onclick="document.getElementById('contactModal').style.display='block'" class="fa fa-envelope w3-hover-opacity"></i>
+  <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+<script>
+
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// When the user clicks anywhere outside of the modal, close it
+var modal = document.getElementById('contactModal');
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>
