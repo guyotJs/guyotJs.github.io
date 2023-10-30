@@ -1,3 +1,0 @@
-# ComingSoon!
-
-> I wonder what might be here....
