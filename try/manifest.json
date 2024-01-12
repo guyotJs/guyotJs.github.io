@@ -1,0 +1,12 @@
+{
+  "name": "Hello World PWA",
+  "version": "1.0",
+  "description": "A simple Progressive Web App",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "start_url": "/",
+  "display": "standalone"
+}
