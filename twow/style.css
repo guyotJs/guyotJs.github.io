@@ -1,0 +1,54 @@
+body{
+    background-color: rgb(20,20,20);
+  }
+  a{
+    text-decoration: none!important;
+  }
+  @keyframes background-pan {
+    from{
+      background-position: 0% center;
+    }
+    to{
+      background-position: -200% center;
+    }
+  }
+  .no-move-grad{
+    color:green;
+  }
+  .grad{
+    animation: background-pan 10s linear infinite;
+    background-image: linear-gradient(to right, green,lightgreen,green,darkgreen,green,lightgreen,green);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+    background-size: 200%;
+  }
+  .box{
+    width: 300px;
+    height: 120px;
+    background-image:radial-gradient(rgb(30,30,30),rgb(20,20,20));
+    border: 1px solid rgba(128, 128, 128,0.5);
+    margin: 20px;
+    border-radius: 10px;
+  }
+  .card-title{
+    color: rgb(51, 203, 0)!important;
+    font-size: 20px;
+  }
+  .card-description{
+    color: rgb(26, 106, 0)!important;
+  }
+  .serif{
+    font-family: serif;
+    margin:10px;
+    font-style: italic;
+  }
+  .ol-serif{
+    font-family: serif;
+    color:white!important;
+  }
+  .boxes{
+    display: grid;
+  grid-template-columns: auto auto auto auto;
+  }
