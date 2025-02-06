@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guyot</title>
+  <link rel="icon" type="image/x-icon" href="https://guyotjs.github.io/duckclear2.png"/>
+  <link rel="stylesheet" href="https://guyotjs.github.io/bcss/bc.css">
+  <link rel="stylesheet" href="https://guyotjs.github.io/bcss/bc-colors.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+    body{
+      margin:0;
+      padding:0;
+      overflow-x: hidden;
+      color:white;
+    }
+    .ehh{
+      color:lightgreen;
+    }
+    .f-xxl{
+      font-size: 80px;
+    }
+    b{
+      font-weight:600;
+    }
+    .blur{
+      backdrop-filter:blur(10px);
+    }
+    .f-respond{
+      font-size: 17px;
+      white-space: nowrap;
+    }
+    .fw-strong{
+      font-weight: 900;
+    }
+    .hover-fw-strong:hover{
+      font-weight: 900;
+    }
+    .border-light{
+      border: 1px solid gray;
+    }
+    .border-right-light{
+      border-right: 1px solid gray;
+    }
+    .border-bottom-light{
+      border-bottom: 1px solid gray;
+    }
+    .plr-l{
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+    .karla{
+      font-family: "Karla";
+    }
+    .dark-sky{
+      color:rgb(63, 144, 176);
+    }
+    .grad{
+      background-image: linear-gradient(to right, lightblue,rgb(230, 124, 230));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      white-space: nowrap;
+      background-size: 200%;
+    }
+    .bg-grad{
+      background-image: linear-gradient(to right, blue,rgb(230, 124, 230));
+      background-color: rgba(255,255,255,0.7);
+      color:black;
+      background-blend-mode: lighten;
+    }
+    .w-full{
+      position: absolute;
+      left:0;
+      width: 93.5%;
+    }
+    #myCanvas{
+      position:fixed;
+      z-index:-1000;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+    }
+  </style>
+</head>
+<body data='{
+  count:0
+}'>
+  <div class=" p-m">
+    <a href="https://github.com/guyotjs/"><i class="fa-lg white fa m-m fa-github"></i></a><a href="https://x.com/westonschnee"><i class="fa-lg white fa m-m fa-twitter"></i></a>
+  </div>
+  <div class="text-center m-m">
+    <p class="f-xxl karla fw-strong bold"><span class="grad fw-strong karla">Guyot</span></p><br/>
+    <p>Web <span class="grad karla fw-strong">correctly.</span></p>
+  </div><br/><br/>
+  <div class="text-center m-m" computer>
+    <fieldset class="grid-2 left-center border-light r blur">
+    <legend><i class="fa fa-gamepad m gray fa-lg"></i></legend>
+      <div class="border-right-light">
+        <div class="plr-l text-center f-respond p-m text-left karla" style="margin-top: 22px;">
+            Select a <span class="grad fw-strong karla">Console</span> to start playing<br/>
+            <span class="gray karla">Powered by <b class="karla">GuyotJS</b></span>
+        </div>
+      </div>
+      <div class="plr-l p-m">
+        <span class="grad hover-fw-strong karla">N64</span><br>
+        <span class="grad hover-fw-strong karla">SNES</span><br>
+        <span class="grad hover-fw-strong karla">GBA</span><br>
+        <span class="grad hover-fw-strong karla">FLASH</span>
+      </div>
+      <div style="margin-bottom: 10px;"></div>
+    </fieldset>
+    </div>
+  <script>
+    function copy(id){
+      navigator.clipboard.writeText(id);
+    }
+  </script>
+  <script src="https://snojs.github.io/sno/crystal.js"></script>
+  <canvas id="myCanvas"></canvas>
+  <script src="https://classicmc-studios.github.io/js/moss.js"></script>
+  <script>
+	createCanvas(screen.width,screen.height);
+    bg("#242424");
+      //Snow_Particles
+    var angle = 0;
+    var W = screen.width+300;
+    var H = screen.height;  
+    var mp = 50;//max particles
+    var particles = [];
+    for(var i = 0; i < mp; i++){
+        particles.push({
+            x: Math.random()*W,
+            y: Math.random()*H,
+            r: Math.random()*4+1,
+            d: Math.random()*mp
+        });
+    }
+    function update(){
+      angle += 0.01;
+      for(var i = 0; i < mp; i++){
+          var p = particles[i];
+          p.y += Math.cos(angle+p.d) + 1 + p.r/2;
+          p.x += -2;
+          if(p.x > W+5 || p.x < -5 || p.y > H){
+              if(i%3 > 0){particles[i] = {x: Math.random()*W, y: -10, r: p.r, d: p.d};}
+              else{
+                  if(Math.sin(angle) > 0){particles[i] = {x: -5, y: Math.random()*H, r: p.r, d: p.d};}
+                  else{particles[i] = {x: W+5, y: Math.random()*H, r: p.r, d: p.d};}
+              }
+          }
+      }
+    }
+    function draw(){
+      for(var i = 0; i < mp; i++){
+          noStroke();selectColor("#ffffff");var p = particles[i];ellipse(p.x,p.y,p.r);
+       }
+       update();
+      }
+    requestAnimationFrame( main )
+    bg("#242424");
+    draw();
+    window.main = function(){
+      requestAnimationFrame( main )
+      bg("#242424");
+      draw();
+    };main();
+  </script>
+
+</body>
+</html>
